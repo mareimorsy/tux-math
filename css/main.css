@@ -1,0 +1,40 @@
+*{
+	margin: 0;
+	padding: 0;
+	/*font-family: 'Rancho', 'Orbitron';*/
+	font-family: sans-serif;
+}
+
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	background-color: #334;
+	background-image: url("../imgs/night_sky.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%; 
+	overflow: hidden;
+}
+
+.meteor{
+	position: absolute;
+}
+
+.meteor img{
+	display: block;
+	width: 85px;
+	margin: 0 auto;
+}
+
+.meteor label{
+	color: #fff;
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+}
