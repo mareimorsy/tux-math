@@ -215,7 +215,7 @@ HTMLElement.prototype.explode = function(Func){
 	this.right(30);
 	this.children[1].hide();
 	playAudio("explode.wav");
-	this.children[0].hide(1000, function(){
+	this.children[0].hide(900, function(){
 		self.left(30);
 		self.goUp();
 		if (typeof Func != 'undefined'){

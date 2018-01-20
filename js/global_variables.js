@@ -1,6 +1,6 @@
 var smooth = 400; // increase this to get high smooth animations
-var soundEnabled = true; // set this to false to mute the game
-var mainAudio = new Audio("audio/tuxi.ogg" ); // play music in the background
+var soundEnabled; // set this to false to mute the game
+var mainAudio = new Audio("audio/tuxi.ogg"); // play music in the background
 
 var answersArr  = [];
 var oprations   = [];

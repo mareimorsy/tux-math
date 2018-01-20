@@ -23,6 +23,7 @@ body{
 
 .meteor{
 	position: absolute;
+	top: -172px;
 }
 
 .meteor img{
@@ -37,4 +38,17 @@ body{
 	font-weight: bold;
 	text-align: center;
 	display: block;
+}
+
+#table{
+	position: relative;
+	z-index: 3000;
+}
+
+#gameOver{
+	position: relative;
+	z-index: 3001;
+	color: #efefef;
+	text-shadow: 5px 5px #111;
+	top: 110px;
 }

@@ -1,99 +1,189 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Game</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/screen.css">
-	<link rel="stylesheet" type="text/css" href="css/font.css">
-	<style>
-		 td
-        {
-            vertical-align:middle;
-            font-family:Algerian;
-            font-size:20px;
-            font-weight:normal;
-            padding:0 10px;
-            color: #e6ac00;
-        }
-		div.Lives 
-        {
-       		 max-width:200px;width:100%;padding:20px;margin-top:30PX;
-       		 float: right;
-       		
-        }
-        .Lives img 
-        {
-        	
-			width: 30px;
-			height: 30px;
-			margin: 0 auto;
-        }
-         p {
-            text-align: center;
-            font-family:Algerian;
-            font-size:100px;
-            font-weight:normal;
-            padding:200px;
-            color: #e6ac00;
-            margin:auto;
-            
-        }
-	</style>
+<style>
+
+
+label
+{
+	padding: 10%;
+}
+
+.body
+{
+    background-repeat: no-repeat;
+    position: fixed; 
+    background-image: url("imgs/menu/menu_bkg.jpg");
+    background-size:100% 100vh;
+    overflow: hidden;
+}
+
+.child
+{
+border-radius: 10px; 
+background-color:#0000ab; 
+opacity:0.5;
+height: 45px;
+width: 270px;
+font-family: cursive;
+text-shadow:3px 3px #000000; 
+}
+
+.parentDiv
+{
+	position:absolute; 
+	top: 150px; 
+	left:550px; 
+	width: 200px;
+}
+
+#bigtux
+{
+	position:absolute; 
+	top:350px; 
+	left:20px;
+	width: 200px;
+	height: 261px; 
+}
+
+#disc_div
+{
+	position:absolute; 
+	top:150px; 
+	left:100px; 
+	width: 300px; 
+	height: 170px; 
+	border-style: outset; 
+	background-color:white;  
+	opacity:0.5;
+	font-size: 7;
+	font-family: cursive;
+	text-align: center;
+	}
+
+#title
+{
+	position:absolute; 
+	width:200px; 
+	height: 100px;
+}
+#arrow
+{
+	position:absolute; 
+	width: 50px;
+	height: 50px;
+	top: 150px;
+	left: 500px;
+}
+#cls
+{
+	position:absolute; 
+	top:0px; 
+	left:1220px; 
+}
+#options
+{
+	position:absolute; 
+	top: 180px; 
+	left:800px; 
+	width: 270px; 
+}
+#mute,#play
+{ 
+	position:relative; 
+	bottom: 95px;
+	left: 60px;
+	background-color: transparent; 
+	opacity: 0.5px; 
+	font-family: cursive; 
+	border: none;
+}
+
+body:-webkit-full-screen {
+ width: 100%;
+ height: 100%;
+ overflow: scroll;
+}
+
+#game_frame{
+	display: none;
+}
+
+
+</style>	
 </head>
-<body>
- <div class ="Lives">
-<table id="table" cellspacing="0" cellpadding="0" border="0">
-    <tr><td id="live">Lives </td> 
-    </tr>
-    <tr>
-    	<td id="score">score </td>
-    </tr>
-</table>
-</div>
+<body class="body">
+	<iframe src="" id="game_frame"></iframe>
 
-<div id="0" class="meteor">
-	<img src="imgs/meteor.gif">
-	<label class="font-effect-fire-animation"></label>
-</div>
-
-<div id="1" class="meteor">
-    <img src="imgs/meteor.gif">
-    <label class="font-effect-fire-animation"></label>
-</div>
-
-<div id="2" class="meteor">
-    <img src="imgs/meteor.gif">
-    <label class="font-effect-fire-animation"></label>
-</div>
-
-<div id="3" class="meteor">
-    <img src="imgs/meteor.gif">
-    <label class="font-effect-fire-animation"></label>
-</div>
-
-<div id="4" class="meteor">
-    <img src="imgs/meteor.gif">
-    <label class="font-effect-fire-animation"></label>
-</div>
-
-
-<div id="screen">
-	<div id="bar">
-	    <div id="red"></div>
-	    <div id="yellow"></div>
-	    <div id="green"></div>
+	<div class="close">
+		<button id="cls">
+			<img src="imgs/menu/close2.png">
+		</button>	
 	</div>
-    <canvas id="counter" width="165" height="49"></canvas>
+
+	<div id="div1">
+		<img id="title" src="imgs/menu/title.png">
+	</div>
+
+<img id="arrow" src="imgs/menu/arrow.gif">
+	<div id="disc_div">
+		<p id="disc">	</p>
+	</div>
+
+	<div id="div3">
+		<img id="bigtux"  src="imgs/menu/bigtux0.png">
+	</div>
+
+
+<div id="parent" class="parentDiv" >
+<div class="child"  id="0" style="">
+<label>
+	<font size="5" color="white">Start The Game</font>
+</label>
 </div>
 
-<p class="font-effect-fire-animation" id="gameOver" style="z-index: 3000"></p>
 
-<script src="js/global_variables.js"></script>
-<script src="js/html_elements.js"></script>
-<script src="js/framework.js"></script>
-<script src="js/functions.js"></script>
-<script src="js/events.js"></script>
-<script src="js/game.js"></script>
-<script src="js/lina.js"></script>
+</br>
+
+<div class="child"  id="1" style="">
+<label>
+	<font size="5" color="white">More Options</font>
+</label>
+</div>
+
+</br>
+<div class="child"  id="2" style="">
+<label>
+<font size="5" color="white">Quit</font>
+</label>
+<a href="">
+
+</div>
+
+<div id="mp-player">
+	<audio id="audio-player" src="audio/tuxi.ogg" type="audio/ogg" controls autoplay loop style="display:none">
+	</audio>
+</div>
+
+</div>
+
+<div id="options" style="display:none;">
+<img  src="imgs/menu/chat.png" style="top: 200px; left:800px; width: 190px; opacity: 0.7;
+    filter: alpha(opacity=70);">	
+<!--	<input type="range" name="volume"  min ="0" max="1" step ="0.1" value ="" method="post"  oninput="res.value=volume.value" required >
+	<output name='res'> </output>-->
+<div>
+	<button id="mute" type="button">
+	<img src="imgs/menu/mute.png">
+Mute sound</button></div>
+</br>
+<div>
+	<button id="play" type="button">
+	<img src="imgs/menu/speaker.png">
+Play sound</button></div>
+</div>
+
+
+<script src="js/menu.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 // When the window loads all its content
 window.addEventListener("load", function(){
+	playIfNotMute();
 	getUserData();
 	if (liveValue === 0)
 	{

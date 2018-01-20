@@ -1,10 +1,17 @@
 // To Mute and Unmute the game sound
-function muteToggle(){
-	if (soundEnabled) {
-		soundEnabled = false;
-		mainAudio.pause();
+function playIfNotMute(){
+
+	if (localStorage.getItem("muteSound") === null) {
+		localStorage.setItem("muteSound") = "false";
+	}
+
+	if (localStorage.getItem("muteSound") == "false") {
+		soundEnabled = true;
 	}else{
-		soundEnabled = true;	
+		soundEnabled = false;
+	}
+
+	if (soundEnabled) {
 		mainAudio.play();
 	}
 }
@@ -34,13 +41,16 @@ function resetLives()
 }
 function resetScore() 
 {
-	score.innerHTML = " Score +" +scoreValue; 
+	score.innerHTML = " Score +" +scoreValue;
 	setUserData();
+	var HighScoreLabel = document.getElementById("high-score");
+	HighScoreLabel.innerHTML = "High Score : " + localStorage.getItem("HighScore") || 0;  
 }
 function recursion(self)
+	// self.animateY(window.innerHeight - self.offsetHeight, 50000 - (scoreValue * 10), function(){
 {
-	self.animateY(window.innerHeight - self.offsetHeight, 50000 - (scoreValue * 10), function(){
-
+	var endRandomVal = 25000 - (scoreValue * 5);
+	self.animateY(window.innerHeight - self.offsetHeight, 50000 - ReturnRandInt (0, endRandomVal) , function(){
 		 liveValue--;
 		 resetLives();
 
@@ -141,7 +151,7 @@ function repeatedAns(arr,val)
 	}
 	if(k > 1)
 	{
-		playAudio("chime.wav")
+		playAudio("cheer.wav");
 	}
 }
 function answerChecking (index)
@@ -177,7 +187,7 @@ function playAll (){
 		setTimeout(function(){
 			m1.setText(randomOperation(), 0, maxNumRange);
 			m1.loop(); // start an infinity loop to aninmate the meteor
-		}, 1000);
+		}, 100);
 
 		setTimeout(function(){
 			m2.setText(randomOperation(), 0, maxNumRange);
@@ -190,19 +200,19 @@ function playAll (){
 			m3.setText(randomOperation(), 0, maxNumRange);
 			m3.loop(); // start an infinity loop to aninmate the meteor
 
-		}, 4000);
+		}, 6000);
 
 		setTimeout(function(){
 			m4.setText(randomOperation(), 0, maxNumRange);
 			m4.loop(); // start an infinity loop to aninmate the meteor
-		}, 5000);
+		}, 9000);
 
 		setTimeout(function(){
 			m5.setText(randomOperation(), 0, maxNumRange);
 			m5.loop(); // start an infinity loop to aninmate the meteor
-		}, 7000);
+		}, 12000);
 
-		mainAudio.play(); // play music in the background
+		playIfNotMute(); // play music in the background
 		screenValue(); // initiate Lina's screen.
 		
 }
@@ -245,6 +255,10 @@ function displayLevels (scoreValue)
 }
 function getUserData()
 {
+	if (localStorage.getItem("HighScore") === null) {
+		localStorage.setItem("HighScore",0);
+	}
+
 	for(var i=0;i<Object.keys(localStorage).length;i++)
 	{
         if(Object.keys(localStorage)[i]=="Lives")
@@ -265,5 +279,20 @@ function setUserData()
 function gameOver()
 {
  	stopAll();
-		levels.innerHTML = "GAME OVER";
+	levels.innerHTML = "GAME OVER";
+
+	localStorage.removeItem("Lives");
+	 if (localStorage.getItem("HighScore") === null) {
+	 	localStorage.setItem("HighScore",scoreValue);
+	 }else{
+	 	if (scoreValue > localStorage.getItem("HighScore")) {
+	 		localStorage.setItem("HighScore",scoreValue);
+	 	}
+	 }
+
+	 //TODO
+	 // if start from scratch is enabled
+		localStorage.setItem("Score",0);
+	 // else
+	    // localStorage.setItem("Score",scoreValue);
 }

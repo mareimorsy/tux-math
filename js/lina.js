@@ -9,6 +9,8 @@ var count = 0;
 var minusFlag = false;
 
 var counterValue = function(e){
+
+
     if( e.keyCode == 189){
         if(minusFlag == false){
             counter++;
@@ -111,7 +113,8 @@ var counterValue = function(e){
                 if (enteredValue == -0 || enteredValue == "-"){
                     enteredValue = 0;
                 }
-                else if (isFound(answersArr,enteredValue) != 0 ){
+                
+                if (isFound(answersArr,enteredValue) != 0 ){
                     repeatedAns(answersArr,enteredValue);
                 }
                 else{

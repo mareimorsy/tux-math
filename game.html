@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/screen.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<style>
+		 td
+        {
+            vertical-align:middle;
+            font-family:Algerian;
+            font-size:20px;
+            font-weight:normal;
+            padding:0 10px;
+            color: #e6ac00;
+        }
+		div.Lives 
+        {
+       		 max-width:200px;width:100%;padding:20px;margin-top:30PX;
+       		 float: right;
+       		
+        }
+        .Lives img 
+        {
+        	
+			width: 30px;
+			height: 30px;
+			margin: 0 auto;
+        }
+         p {
+            text-align: center;
+            font-family:Algerian;
+            font-size:100px;
+            font-weight:normal;
+            padding:200px;
+            color: #e6ac00;
+            margin:auto;
+            
+        }
+	</style>
+</head>
+<body>
+ <div class ="Lives">
+<table id="table" cellspacing="0" cellpadding="0" border="0">
+    <tr><td id="live">Lives </td> 
+    </tr>
+    <tr>
+        <td id="high-score">High score </td>
+    </tr>
+    <tr>
+        <td id="score">score </td>
+    </tr>
+
+</table>
+</div>
+
+<div id="0" class="meteor">
+	<img src="imgs/meteor.gif">
+	<label class="font-effect-fire-animation"></label>
+</div>
+
+<div id="1" class="meteor">
+    <img src="imgs/meteor.gif">
+    <label class="font-effect-fire-animation"></label>
+</div>
+
+<div id="2" class="meteor">
+    <img src="imgs/meteor.gif">
+    <label class="font-effect-fire-animation"></label>
+</div>
+
+<div id="3" class="meteor">
+    <img src="imgs/meteor.gif">
+    <label class="font-effect-fire-animation"></label>
+</div>
+
+<div id="4" class="meteor">
+    <img src="imgs/meteor.gif">
+    <label class="font-effect-fire-animation"></label>
+</div>
+
+
+<div id="screen">
+	<div id="bar">
+	    <div id="red"></div>
+	    <div id="yellow"></div>
+	    <div id="green"></div>
+	</div>
+    <canvas id="counter" width="165" height="49"></canvas>
+</div>
+
+<p class="font-effect-fire-animation" id="gameOver"></p>
+
+<script src="js/global_variables.js"></script>
+<script src="js/html_elements.js"></script>
+<script src="js/framework.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/events.js"></script>
+<script src="js/game.js"></script>
+<script src="js/lina.js"></script>
+</body>
+</html>
