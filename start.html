@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game Starter</title>
+</head>
+<body>
+	Plase don't close this window, it's required to get the best gaming experience!
+	<script type="text/javascript">
+		var win = window.open('index.html','_blank');
+		localStorage.setItem("closed", 0);
+		win.open();
+		setInterval(function() {
+			if (win.self == null || localStorage.getItem("closed") == "1") {
+				window.close();
+			}
+		}, 1000);
+	</script>
+</body>
+</html>

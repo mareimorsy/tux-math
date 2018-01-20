@@ -164,6 +164,7 @@ menuChilds[2].addEventListener("mouseleave",function() {
 	menuChilds[2].addEventListener("mousedown",function() {
 	if(confirm("Are you sure you want to quit?"))
 	{
+		localStorage.setItem("closed", 1);
 		window.close();
 	}
 });

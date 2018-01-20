@@ -45,10 +45,42 @@ body{
 	z-index: 3000;
 }
 
-#gameOver{
+#levels{
 	position: relative;
 	z-index: 3001;
 	color: #efefef;
 	text-shadow: 5px 5px #111;
 	top: 110px;
 }
+ td
+        {
+            vertical-align:middle;
+            font-family:Algerian;
+            font-size:20px;
+            font-weight:normal;
+            padding:0 10px;
+            color: #e6ac00;
+        }
+		div.Lives 
+        {
+       		 max-width:200px;width:100%;padding:20px;margin-top:30PX;
+       		 float: right;
+       		
+        }
+        .Lives img 
+        {
+        	
+			width: 30px;
+			height: 30px;
+			margin: 0 auto;
+        }
+         p {
+            text-align: center;
+            font-family:Algerian;
+            font-size:100px;
+            font-weight:normal;
+            padding:200px;
+            color: #e6ac00;
+            margin:auto;
+            
+        }

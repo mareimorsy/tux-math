@@ -166,11 +166,11 @@ function answerChecking (index)
 	resetScore();
 	if(scoreValue === 500  || scoreValue === 1500 || scoreValue === 2500)
 	{
-		maxNumRange += 10;
+		maxNumRange = 20;
 	}else if(scoreValue === 1000 || scoreValue === 2000 || scoreValue === 3000)
 	{
 		displayLevels(scoreValue);
-		maxNumRange = 20;
+		maxNumRange = 10;
 		liveValue++;
 		resetLives();
 
