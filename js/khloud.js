@@ -1,9 +1,9 @@
-var m1 = document.getElementById(0); // Meteor 1
+// var m1 = document.getElementById(0); // Meteor 1
 // var m2 = document.getElementById(1);
 // var m3 = document.getElementById(2);
 // var m4 = document.getElementById(3);
 // var m5 = document.getElementById(4);
-var endPlay = document.getElementById("gameOver");
+var endPlay = document.getElementById("levels"); // gameover
 // console.log(endPlay);
 var smooth = 400; // increase this to get high smooth animations
 var soundEnabled = true; // set this to false to mute the game

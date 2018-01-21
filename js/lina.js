@@ -29,7 +29,7 @@ var counterValue = function(e){
                     minusFlag = true;
                     var temp = enteredValue.toString();
                     enteredValue = "-";
-                    enteredValue += temp;   
+                    enteredValue += temp;  
                 }   
         }
         else if (minusFlag == true){
@@ -44,15 +44,15 @@ var counterValue = function(e){
     if ((e.keyCode >= 48) && (e.keyCode <= 57) && (count < 4)){
         count++;
         var res = e.keyCode - 48;
-
         if(minusFlag == true){
-                if(res == 0){
-                    enteredValue = 0;
-                }
-                else{
+                // if(res == 0){
+                //     enteredValue = 0;
+                //     console.log("g");
+                // }
+                // else{
                     var temp = enteredValue.toString();       
                     enteredValue = temp + res.toString();
-                }
+                // }
         }
         else{
             if(enteredValue == 0){

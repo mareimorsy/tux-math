@@ -44,13 +44,25 @@ function resetScore()
 	score.innerHTML = " Score +" +scoreValue;
 	setUserData();
 	var HighScoreLabel = document.getElementById("high-score");
-	HighScoreLabel.innerHTML = "High Score : " + localStorage.getItem("HighScore") || 0;  
+	if (localStorage.getItem("HighScore") === null) {
+		localStorage.setItem("HighScore", 0);
+	}
+
+	if (scoreValue > localStorage.getItem("HighScore")) {
+		localStorage.setItem("HighScore",scoreValue);
+	}
+
+	HighScoreLabel.innerHTML = "High Score : " + localStorage.getItem("HighScore") || 0;
 }
 function recursion(self)
-	// self.animateY(window.innerHeight - self.offsetHeight, 50000 - (scoreValue * 10), function(){
 {
-	var endRandomVal = 25000 - (scoreValue * 5);
-	self.animateY(window.innerHeight - self.offsetHeight, 50000 - ReturnRandInt (0, endRandomVal) , function(){
+	randomSpeed = 25000 - ReturnRandInt ((scoreValue*4), (scoreValue * 10));
+	// Set max speed to 10 seconds.
+	if (randomSpeed < 10000) {
+		randomSpeed = 10000;
+	}
+	// self.animateY(window.innerHeight - self.offsetHeight, 50000 - (scoreValue * 10), function(){
+	self.animateY(window.innerHeight - self.offsetHeight, randomSpeed , function(){
 		 liveValue--;
 		 resetLives();
 
@@ -77,6 +89,7 @@ function ReturnRandInt(min, max){
   var result= Math.floor(Math.random() * (max - min+1)) + min; 
   return result;
 }
+
 function generateQuestions (self,opration,min,max)
 {
 	if(opration == "-")
@@ -107,6 +120,7 @@ function setOprationsArr()
 		oprations = ["+"];
 	}else if (scoreValue < 2000)
 	{
+
 		oprations = ["+","-"];
 	}else if (scoreValue < 3000)
 	{
