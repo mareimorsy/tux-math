@@ -1,3 +1,8 @@
+//===============================================================================
+// ATTENTION : We have built this framework from scratch using vanilla JavaScript
+//  to help us making the Game even before we select one!.
+//===============================================================================
+
 HTMLElement.prototype.animation = true; // allow element to move otherwise it will freeze
 
 HTMLElement.prototype.left = function(offset = 5){

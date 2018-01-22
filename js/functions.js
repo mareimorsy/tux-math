@@ -43,7 +43,6 @@ function resetScore()
 {
 	score.innerHTML = " Score +" +scoreValue;
 	setUserData();
-	var HighScoreLabel = document.getElementById("high-score");
 	if (localStorage.getItem("HighScore") === null) {
 		localStorage.setItem("HighScore", 0);
 	}
